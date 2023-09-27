@@ -16,9 +16,3 @@ vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
 vim.keymap.set("n", "<leader>fs", function()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
-
-Keymap("n", "<leader>gh", vim.diagnostic.open_float)
-
-Keymap("n", "K", vim.lsp.buf.hover)
-
-Keymap("n", "<leader>gr", "<cmd>Telescope lsp_references<CR>")

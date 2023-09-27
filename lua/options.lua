@@ -1,7 +1,11 @@
 local v = vim.opt
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 v.clipboard = "unnamedplus"
 v.showtabline = 0
+v.ignorecase = true
 v.smartcase = true
 v.smartindent = true
 v.number = true
@@ -14,7 +18,6 @@ v.shiftwidth = 2 -- the number of spaces inserted for each indentation
 v.autoindent = true
 v.smartindent = true
 v.expandtab = true
-v.smartcase = true
 v.swapfile = false
 
 v.wrap = true -- display lines as one long line

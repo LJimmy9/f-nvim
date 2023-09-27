@@ -23,7 +23,7 @@ return {
 			vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
 			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
 			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-			print("attaching")
+			print(" attaching")
 		end
 
 		-- used to enable autocompletion (assign to every lsp server config)
