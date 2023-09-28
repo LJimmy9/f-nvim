@@ -28,3 +28,14 @@ Keymap("n", "<leader>i", "<C-i>")
 
 -- Open command list
 Keymap("n", "<leader>cl", ":<C-f>")
+
+Keymap({ "n", "v" }, "p", '"0p')
+
+Keymap({ "n", "v" }, "p", '"0p')
+
+Keymap("i", "<C-l>", "<Right>")
+Keymap("i", "<C-h>", "<Left>")
+
+Keymap("n", "<leader>rd", ":redir @a")
+
+Keymap("n", "<leader>ya", '^v$"ay')

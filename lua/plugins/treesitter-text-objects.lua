@@ -79,12 +79,12 @@ return {
 				swap = {
 					enable = true,
 					swap_next = {
-						["<leader>m" .. keys.param] = "@parameter.inner", -- swap object under cursor with next
+						["<leader>m" .. keys.param] = "@parameter.outer", -- swap object under cursor with next
 						["<leader>m" .. keys.func] = "@function.outer", -- swap object under cursor with next
 						["<leader>m" .. keys.cond] = "@conditional.outer", -- swap object under cursor with next
 					},
 					swap_previous = {
-						["<leader>m" .. string.upper(keys.param)] = "@parameter.inner", -- swap object under cursor with previous
+						["<leader>m" .. string.upper(keys.param)] = "@parameter.outer", -- swap object under cursor with previous
 						["<leader>m" .. string.upper(keys.func)] = "@function.outer", -- swap object under cursor with next
 						["<leader>m" .. string.upper(keys.cond)] = "@conditional.outer", -- swap object under cursor with next
 					},
@@ -96,7 +96,7 @@ return {
 						["[" .. keys.func] = "@function.outer",
 						["[" .. keys.param] = "@parameter.outer",
 						["[" .. keys.cond] = "@conditional.outer",
-						["[" .. keys.block] = { query = "@block.inner", desc = "Select inner part of a block region" },
+						["[" .. keys.block] = "@block.outer",
 						["[" .. keys.cl] = { query = "@class.outer", desc = "Next class start" },
 					},
 				},

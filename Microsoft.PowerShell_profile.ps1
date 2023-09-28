@@ -15,3 +15,10 @@ Set-Alias psp1 goToPowerShellProfile
 Set-Alias c clear
 
 Set-Alias nvim nvim-qt
+
+function goToProjects {
+	cd C:\Users\yomam\Documents\Projects
+	nvim .
+}
+
+Set-Alias nvim-p goToProjects

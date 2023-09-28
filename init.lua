@@ -1,4 +1,4 @@
-local isWindows = vim.fn.has("windows")
+local isWindows = vim.fn.has("window")
 
 -- Configure powershell if windows
 if isWindows ~= 1 then
