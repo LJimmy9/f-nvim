@@ -1,3 +1,9 @@
-Keymap({ "n", "v" }, "<leader>su", [[ciwJSON.stringify(<c-r><c-w>)<Left><esc>p]])
-
-Keymap({ "n", "v" }, "<leader>s{", [[ciw{<c-r><c-w>}<Left><esc>p]])
+-- local opts = {
+-- 	nowait = true,
+-- 	silent = true,
+-- }
+--
+-- Keymap({ "n", "i" }, "<leader>su", '<esc>:execute "normal! i(<c-r>")"', opts)
+--
+-- Keymap("i", "<leader>spa", '<esc>:execute "normal! ciw(<c-r><c-w>)"<CR>A', opts)
+-- Keymap("i", "<leader>sbr", '<esc>:execute "normal! ciw{<c-r><c-w>:}"<CR>i', opts)

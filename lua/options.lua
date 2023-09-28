@@ -21,7 +21,7 @@ v.expandtab = true
 v.swapfile = false
 
 v.wrap = true -- display lines as one long line
-v.updatetime = 300 -- faster completion (4000ms default)
+v.updatetime = 100 -- faster completion (4000ms default)
 v.laststatus = 0 -- disables the status line
 
 v.termguicolors = true
