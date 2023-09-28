@@ -25,3 +25,6 @@ Keymap("v", "K", ":m '<-2<CR>gv=gv")
 
 Keymap("n", "<leader>o", "<C-o>")
 Keymap("n", "<leader>i", "<C-i>")
+
+-- Open command list
+Keymap("n", "<leader>cl", ":<C-f>")
