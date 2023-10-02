@@ -1,8 +1,9 @@
-local isWindows = vim.fn.has("window")
+local isWindows = vim.fn.has("win32")
 
 -- Configure powershell if windows
-if isWindows ~= 1 then
+if isWindows == 1 then
 	local powershell_options = {
+
 		shell = vim.fn.executable("pwsh") == 1 and "pwsh" or "powershell",
 		shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;",
 		shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait",
@@ -25,3 +26,26 @@ require("lazy-setup")
 require("keybinds")
 
 vim.cmd.colorscheme("tokyonight")
+vim.g.peekaboo_window = "vert bo 80new"
+
+local ls = require("luasnip")
+
+ls.setup({
+	snip_env = {
+		s = function(...)
+			local snip = ls.s(...)
+			-- we can't just access the global `ls_file_snippets`, since it will be
+			-- resolved in the environment of the scope in which it was defined.
+			table.insert(getfenv(2).ls_file_snippets, snip)
+		end,
+		parse = function(...)
+			local snip = ls.parser.parse_snippet(...)
+			table.insert(getfenv(2).ls_file_snippets, snip)
+		end,
+		-- remaining definitions.
+		...,
+	},
+	...,
+})
+
+require("luasnip.loaders.from_lua").load({ paths = "./LuaSnip" })

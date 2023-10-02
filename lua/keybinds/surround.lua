@@ -1,9 +1,5 @@
--- local opts = {
--- 	nowait = true,
--- 	silent = true,
--- }
---
--- Keymap({ "n", "i" }, "<leader>su", '<esc>:execute "normal! i(<c-r>")"', opts)
---
--- Keymap("i", "<leader>spa", '<esc>:execute "normal! ciw(<c-r><c-w>)"<CR>A', opts)
--- Keymap("i", "<leader>sbr", '<esc>:execute "normal! ciw{<c-r><c-w>:}"<CR>i', opts)
+Keymap("v", "<leader>sp", 'c(<C-r>")')
+Keymap("v", "<leader>sb", 'c{<C-r>"}')
+Keymap("v", "<leader>sq", 'c[<C-r>"]')
+
+Keymap("n", "<leader>v", "_v$")
