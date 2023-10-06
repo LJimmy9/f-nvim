@@ -23,7 +23,6 @@ return {
 			vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
 			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
 			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-			print(" attaching")
 		end
 
 		-- used to enable autocompletion (assign to every lsp server config)
@@ -77,8 +76,20 @@ return {
 			end,
 		})
 
-		-- configure svelte server
+		-- configure rust server
+		lspconfig["rust_analyzer"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		-- configure zig server
 		lspconfig["zls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach(),
+		})
+
+		-- configure zig server
+		lspconfig["clangd"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach(),
 		})

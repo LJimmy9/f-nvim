@@ -25,6 +25,7 @@ return {
 				formatting.prettier.with({
 					extra_filetypes = { "svelte" },
 				}),
+				formatting.clang_format,
 				formatting.stylua, -- lua formatter
 				diagnostics.eslint_d.with({ -- js/ts linter
 					condition = function(utils)

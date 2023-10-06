@@ -8,6 +8,7 @@ end)
 Keymap("n", "<leader>er", ":NvimTreeToggle<CR>")
 
 Keymap("n", "<leader>ss", function()
+	vim.lsp.buf.format()
 	RunCommands({ "w" })
 end)
 
@@ -33,3 +34,7 @@ Keymap({ "n", "v" }, "<leader>p", '"0p')
 
 Keymap("i", "<C-l>", "<Right>")
 Keymap("i", "<C-h>", "<Left>")
+
+Keymap("v", "<leader>cw", ":s///g<Left><Left><Left>")
+
+Keymap("n", "<leader>cd", ":cd %:p:h <CR>")
