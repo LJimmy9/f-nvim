@@ -26,6 +26,7 @@ return {
 					extra_filetypes = { "svelte" },
 				}),
 				formatting.clang_format,
+				formatting.ocamlformat,
 				formatting.stylua, -- lua formatter
 				diagnostics.eslint_d.with({ -- js/ts linter
 					condition = function(utils)

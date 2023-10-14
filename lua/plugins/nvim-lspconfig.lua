@@ -22,6 +22,7 @@ return {
 			vim.keymap.set("n", "gh", vim.diagnostic.open_float, opts)
 			vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
 			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
+			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 		end
 
@@ -88,8 +89,14 @@ return {
 			on_attach = on_attach(),
 		})
 
-		-- configure zig server
+		-- configure clang server
 		lspconfig["clangd"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach(),
+		})
+
+		-- configure ocaml server
+		lspconfig["ocamllsp"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach(),
 		})
