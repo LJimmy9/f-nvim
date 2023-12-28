@@ -31,6 +31,7 @@ return {
 					"markdown",
 					"markdown_inline",
 					"svelte",
+					"rust",
 					"bash",
 					"lua",
 					"vim",
@@ -45,6 +46,15 @@ return {
 				},
 				-- auto install above language parsers
 				auto_install = true,
+				incremental_selection = {
+					enable = true,
+					keymaps = {
+						init_selection = "v",
+						node_incremental = "V",
+						scope_incremental = "s",
+						node_decremental = "v",
+					},
+				},
 			})
 		end,
 	},

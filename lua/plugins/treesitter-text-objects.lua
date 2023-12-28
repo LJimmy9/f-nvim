@@ -1,10 +1,18 @@
 local keys = {
 	func = "f",
-	cl = "c",
+	cl = "l",
 	param = "p",
 	block = "b",
-	cond = "i",
+	cm = "c",
 }
+
+local function testa()
+	print("nothin")
+end
+
+local function testa()
+	print("nothin")
+end
 
 return {
 	"nvim-treesitter/nvim-treesitter-textobjects",
@@ -20,10 +28,10 @@ return {
 					border = "none",
 					floating_preview_opts = {},
 					peek_definition_code = {
-						["<leader>da" .. keys.func] = "@function.outer",
-						["<leader>da" .. keys.cl] = "@class.outer",
-						["<leader>da" .. keys.param] = "@parameter.outer",
-						["<leader>da" .. keys.cond] = "@conditional.outer",
+						["<leader>pa" .. keys.func] = "@function.outer",
+						["<leader>pa" .. keys.cl] = "@class.outer",
+						["<leader>pa" .. keys.param] = "@parameter.outer",
+						["<leader>pa" .. keys.cm] = "@comment.outer",
 					},
 				},
 				select = {
@@ -47,13 +55,13 @@ return {
 							desc = "Select inner part of a parameter/field region",
 						},
 
-						["a" .. keys.cond] = {
-							query = "@conditional.outer",
-							desc = "Select outer part of a conditional region",
+						["a" .. keys.cm] = {
+							query = "@comment.outer",
+							desc = "Select outer part of a comment region",
 						},
-						["i" .. keys.cond] = {
-							query = "@conditional.inner",
-							desc = "Select inner part of a conditional region",
+						["i" .. keys.cm] = {
+							query = "@comment.inner",
+							desc = "Select inner part of a comment region",
 						},
 
 						["al"] = { query = "@loop.outer", desc = "Select outer part of a loop region" },
@@ -79,14 +87,14 @@ return {
 				swap = {
 					enable = true,
 					swap_next = {
-						["<leader>m" .. keys.param] = "@parameter.outer", -- swap object under cursor with next
+						["<leader>m" .. keys.param] = "@parameter.inner", -- swap object under cursor with next
 						["<leader>m" .. keys.func] = "@function.outer", -- swap object under cursor with next
-						["<leader>m" .. keys.cond] = "@conditional.outer", -- swap object under cursor with next
+						["<leader>m" .. keys.cm] = "@comment.outer", -- swap object under cursor with next
 					},
 					swap_previous = {
-						["<leader>m" .. string.upper(keys.param)] = "@parameter.outer", -- swap object under cursor with previous
+						["<leader>m" .. string.upper(keys.param)] = "@parameter.inner", -- swap object under cursor with previous
 						["<leader>m" .. string.upper(keys.func)] = "@function.outer", -- swap object under cursor with next
-						["<leader>m" .. string.upper(keys.cond)] = "@conditional.outer", -- swap object under cursor with next
+						["<leader>m" .. string.upper(keys.cm)] = "@comment.outer", -- swap object under cursor with next
 					},
 				},
 				move = {
@@ -94,10 +102,17 @@ return {
 					set_jumps = true, -- whether to set jumps in the jumplist
 					goto_next_start = {
 						["[" .. keys.func] = "@function.outer",
-						["[" .. keys.param] = "@parameter.outer",
-						["[" .. keys.cond] = "@conditional.outer",
+						["[" .. keys.param] = "@parameter.inner",
+						["[" .. keys.cm] = "@comment.outer",
 						["[" .. keys.block] = "@block.outer",
 						["[" .. keys.cl] = { query = "@class.outer", desc = "Next class start" },
+					},
+					goto_next_end = {
+						["]" .. keys.func] = "@function.outer",
+						["]" .. keys.param] = "@parameter.inner",
+						["]" .. keys.cm] = "@comment.outer",
+						["]" .. keys.block] = "@block.outer",
+						["]" .. keys.cl] = { query = "@class.outer", desc = "Next class start" },
 					},
 				},
 			},

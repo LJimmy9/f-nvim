@@ -7,9 +7,29 @@ end)
 
 Keymap("n", "<leader>er", ":NvimTreeToggle<CR>")
 
+Keymap("n", "gd", function()
+	RunCommands({ ":normal *", ":nohl" })
+end)
+
 Keymap("n", "<leader>ss", function()
 	vim.lsp.buf.format()
 	RunCommands({ "w" })
+end)
+
+Keymap("n", "<C-h>", function()
+	RunCommands({ "vertical resize +5" })
+end)
+
+Keymap("n", "<C-l>", function()
+	RunCommands({ "vertical resize -5" })
+end)
+
+Keymap("n", "<C-j>", function()
+	RunCommands({ "horizontal resize +5" })
+end)
+
+Keymap("n", "<C-k>", function()
+	RunCommands({ "horizontal resize -5" })
 end)
 
 Keymap({ "n", "v" }, "<leader>nh", ":nohl<CR>")
@@ -24,13 +44,8 @@ Keymap("n", "<leader>w", "<C-w>")
 Keymap("v", "J", ":m '>1<CR>gv=gv")
 Keymap("v", "K", ":m '<-2<CR>gv=gv")
 
-Keymap("n", "<leader>o", "<C-o>")
-Keymap("n", "<leader>i", "<C-i>")
-
 -- Open command list
 Keymap("n", "<leader>cl", ":<C-f>")
-
-Keymap({ "n", "v" }, "<leader>p", '"0p')
 
 Keymap("i", "<C-l>", "<Right>")
 Keymap("i", "<C-h>", "<Left>")
@@ -38,3 +53,5 @@ Keymap("i", "<C-h>", "<Left>")
 Keymap("v", "<leader>cw", ":s///g<Left><Left><Left>")
 
 Keymap("n", "<leader>cd", ":cd %:p:h <CR>")
+
+Keymap({ "n", "v" }, "<leader>d", [["_d]])
