@@ -25,4 +25,5 @@ v.updatetime = 100 -- faster completion (4000ms default)
 v.laststatus = 0 -- disables the status line
 
 v.termguicolors = true
-v.background = "dark" -- colorschemes that can be light or dark will be made dark
+
+v.background = "light"

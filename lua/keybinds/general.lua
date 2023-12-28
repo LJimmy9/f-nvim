@@ -7,7 +7,7 @@ end)
 
 Keymap("n", "<leader>er", ":NvimTreeToggle<CR>")
 
-Keymap("n", "gd", function()
+Keymap("n", "<leader>gd", function()
 	RunCommands({ ":normal *", ":nohl" })
 end)
 

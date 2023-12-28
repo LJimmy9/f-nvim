@@ -25,7 +25,8 @@ require("options")
 require("lazy-setup")
 require("keybinds")
 
-vim.cmd.colorscheme("tokyonight")
+-- vim.cmd.colorscheme("tokyonight")
+vim.cmd.colors("simple-dark")
 vim.g.peekaboo_window = "vert bo 80new"
 
 local ls = require("luasnip")
