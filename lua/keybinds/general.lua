@@ -16,22 +16,6 @@ Keymap("n", "<leader>ss", function()
 	RunCommands({ "w" })
 end)
 
-Keymap("n", "<C-h>", function()
-	RunCommands({ "vertical resize +5" })
-end)
-
-Keymap("n", "<C-l>", function()
-	RunCommands({ "vertical resize -5" })
-end)
-
-Keymap("n", "<C-j>", function()
-	RunCommands({ "horizontal resize +5" })
-end)
-
-Keymap("n", "<C-k>", function()
-	RunCommands({ "horizontal resize -5" })
-end)
-
 Keymap({ "n", "v" }, "<leader>nh", ":nohl<CR>")
 
 Keymap("n", "<leader>lr", ":LspRestart<CR>")
