@@ -7,15 +7,6 @@ end)
 
 Keymap("n", "<leader>er", ":NvimTreeToggle<CR>")
 
-Keymap("n", "<leader>gd", function()
-	RunCommands({ ":normal *", ":nohl" })
-end)
-
-Keymap("n", "<leader>ss", function()
-	vim.lsp.buf.format()
-	RunCommands({ "w" })
-end)
-
 Keymap({ "n", "v" }, "<leader>nh", ":nohl<CR>")
 
 Keymap("n", "<leader>lr", ":LspRestart<CR>")
@@ -39,3 +30,13 @@ Keymap("v", "<leader>cw", ":s///g<Left><Left><Left>")
 Keymap("n", "<leader>cd", ":cd %:p:h <CR>")
 
 Keymap({ "n", "v" }, "<leader>d", [["_d]])
+
+Keymap("n", "<leader>gd", function()
+	RunCommands({ ":normal *", ":nohl" })
+	RunCommands({ ":normal zz" })
+end)
+
+Keymap("n", "<leader>ss", function()
+	vim.lsp.buf.format()
+	RunCommands({ "w" })
+end)
